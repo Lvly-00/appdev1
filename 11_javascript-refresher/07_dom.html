@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>This Will Change Background Color</h2>
+    <button type="button" onclick="changeBackgroundColor()">
+      Set Background Color
+    </button>
+
+    <p id="message"></p>
+
+    <script>
+      // function to change background color
+      function changeBackgroundColor() {
+        <!-- document.body.style.backgroundColor = "lightblue"; -->
+        let colors = ["blue", "green", "pink", "gray"];
+        let color = prompt("Enter a color: blue, green, pink, gray");
+        if (colors.includes(color)) {
+          document.body.style.backgroundColor = color;
+        } else {
+          alert("Invalid color");
+        }
+      }
+
+      // function to set Timeout message
+      const myTimeout = setTimeout(timeoutMessage, 2000);
+
+      function timeoutMessage() {
+        document.getElementById("message").innerHTML =
+          "This message appears after 2 seconds";
+      }
+    </script>
+  </body>
+</html>
