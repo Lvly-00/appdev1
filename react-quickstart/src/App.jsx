@@ -1,14 +1,14 @@
 import { useState } from 'react'
 import './App.css'
 
-function MyButton() {
-  return (<button>Click me</button>)
+function AboutPage() {
+  return <> <h1>About</h1>
+    <p>Hello there, <br /> How do you do?</p></>
 }
 function App() {
   return (
     <>
-      <h1> Welcome to my app</h1>
-      <MyButton />
+      <AboutPage />
     </>
   )
 }
