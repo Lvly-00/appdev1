@@ -1,48 +1,24 @@
-import { useState } from "react";
+import React from "react";
 import "./App.css";
 
-function UserPanel() {
-  const user = {
-    name: "Brainrot Cat",
-    imageURL:
-      "https://i.redd.it/a-side-effect-of-lackadaisy-brainrot-no-one-tells-you-is-v0-4vs0wh5f8d0c1.jpg?width=564&format=pjpg&auto=webp&s=c81c92b5e9fb45418839c5536042796d8200c386",
-    information: "This is a cat with brainrot",
-  };
-  return (
-    <>
-      <img className="avatar" src={user.imageURL} />
-      <h1> {user.name}</h1>
-      <p> {user.information}</p>
-    </>
-  );
-}
-
-function AdminPanel() {
-  const user = {
-    name: "Doggo",
-    imageURL:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNQHrzBBdeaMeZxt-kX_Mj2WDM8u0YkzlikQ&s",
-    information: "This Doggo is Admin ",
-  };
-  return (
-    <>
-      <img className="avatar" src={user.imageURL} />
-      <h1> {user.name}</h1>
-      <p> {user.information}</p>
-    </>
-  );
-}
-
-let user;
-
-if (false) {
-  user = <UserPanel />;
-} else {
-  user = <AdminPanel />;
-}
+const elements = [
+  { element: "Anemo", id: 1 },
+  { element: "Geo", id: 2 },
+  { element: "Electro", id: 3 },
+  { element: "Dendro", id: 4 },
+  { element: "Pyro", id: 5 },
+  { element: "Cryo", id: 6 },
+];
 
 function App() {
-  return <>{user}</>;
+  const listElements = elements.map((elements) => (
+    <li key={elements.id}>{elements.element}</li>
+  ));
+  return (
+    <>
+      <ul>{listElements}</ul>
+    </>
+  );
 }
 
 export default App;
