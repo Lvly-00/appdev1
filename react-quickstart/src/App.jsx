@@ -2,26 +2,23 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  function ButtonCounter() {
-    const [count, setCount] = useState(0);
-    function handleCounting() {
-      setCount(count + 1);
-    }
+  const [count, setCount] = useState(0);
 
-    return <button onClick={handleCounting}> {count} </button>;
+  function handleClick() {
+    setCount(count + 1);
   }
 
   return (
-    <>
-      <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-        <ButtonCounter />
-        <p>+</p>
-        <ButtonCounter />
-        <p>=</p>
-        <ButtonCounter />
-      </div>
-    </>
+    <div>
+      <h1>Counters that update together</h1>
+      <MyButton count={count} onClick={handleClick} />
+      <MyButton count={count} onClick={handleClick} />
+    </div>
   );
 }
 
 export default App;
+
+function MyButton({ count, onClick }) {
+  return <button onClick={onClick}>Clicked {count} times</button>;
+}
