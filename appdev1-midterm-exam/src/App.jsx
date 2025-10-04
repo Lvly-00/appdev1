@@ -1,4 +1,5 @@
 import React from "react";
+
 import Logo from "./assets/images/logo.png";
 import Slider from "./assets/images/slider-dec.png";
 import HeadingLine from "./assets/images/heading-line-dec.png";
@@ -7,8 +8,9 @@ import Quote from "./assets/images/quote.png";
 import ClientImage from "./assets/images/client-image.jpg";
 import PricingTable from "./assets/images/pricing-table-01.png";
 import WhiteLogo from "./assets/images/white-logo.png";
+import SignInModal from "./components/SignInModal";
 
-const App = () => {
+function App() {
   return (
     <>
       {/* ***** Preloader Start ***** */}
@@ -59,7 +61,11 @@ const App = () => {
                   </li>
                   <li>
                     <div className="gradient-button">
-                      <a id="modal_trigger" href="#modal">
+                      <a
+                        id="modal_trigger"
+                        onClick={() => setIsOpen(true)}
+                        href="#modal"
+                      >
                         <i className="fa fa-sign-in-alt" /> Sign In Now
                       </a>
                     </div>
@@ -922,6 +928,6 @@ const App = () => {
       {/* Scripts */}
     </>
   );
-};
+}
 
 export default App;
