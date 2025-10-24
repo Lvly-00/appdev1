@@ -2,16 +2,22 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Gallery from './components/Gallery'
 
-function App() {
-  const [count, setCount] = useState(0)
 
+export default function TodoList() {
   return (
     <>
-    <Gallery/>
+      <h1>Hedy Lamarr's Todos</h1>
+      <img
+        src="https://i.imgur.com/yXOvdOSs.jpg"
+        alt="Hedy Lamarr"
+        className="photo"
+      />
+      <ul>
+        <li>Invent new traffic lights</li>
+        <li>Rehearse a movie scene</li>
+        <li>Improve spectrum technology</li>
+      </ul>
     </>
-  )
+  );
 }
-
-export default App
