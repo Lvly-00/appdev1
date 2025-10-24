@@ -1,22 +1,17 @@
-
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
 import './App.css'
+import Gallery from './components/Gallery'
 
-function Profile() {
+function App() {
+  const [count, setCount] = useState(0)
+
   return (
-    <img
-      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJ_Mg1SUJNGG7paEiyiBWizP7ecGlh3_IfDcgkMQhU3tDuXzpce77l8_-EoP_jbDKTCbw&usqp=CAU"
-      alt="Katherine Johnson"
-    />
-  );
+    <>
+    <Gallery/>
+    </>
+  )
 }
 
-export default function Gallery() {
-  return (
-    <section>
-      <h1>Amazing scientists</h1>
-      <Profile />
-      <Profile />
-      <Profile />
-    </section>
-  );
-}
+export default App
