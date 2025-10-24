@@ -2,39 +2,29 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { people } from '../src/utils/data.jsx';
+import { getImageUrl } from '../src/utils/utils.jsx';
 
-function Item({ name, isPacked }) {
-  return (
-    <li className="item">
-      {name} {isPacked && '✅'}
+export default function List() {
+  const listItems = people.map(person =>
+    <li key={person.id}>
+      <img
+        src={getImageUrl(person)}
+        alt={person.name}
+      />
+      <p>
+        <b>{person.name}:</b>
+        {' ' + person.profession + ' '}
+        known for {person.accomplishment}
+      </p>
     </li>
   );
-}
-
-export default function PackingList() {
   return (
-    <section>
-      <h1>Genshin Daily Missions</h1>
-      <ul>
-        <Item
-          isPacked={true}
-          name="Defeat 10 Hilichurls"
-        />
-        <Item
-          isPacked={false}
-          name="Deliver food to Katheryne"
-        />
-        <Item
-          isPacked={true}
-          name="Collect 3 Crystalflies"
-        />
-        <Item
-          isPacked={false}
-          name="Help a wandering adventurer"
-        />
-      </ul>
-
-    </section>
+    <article>
+      <h1>Scientists</h1>
+      <ul>{listItems}</ul>
+    </article>
   );
 }
+
 
