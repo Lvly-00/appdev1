@@ -5,19 +5,21 @@ import './App.css'
 import { people } from '../src/utils/data.jsx';
 import { getImageUrl } from '../src/utils/utils.jsx';
 
-function Cup({ guest }) {
-  return <h2>Tea cup for guest #{guest}</h2>;
-}
+import ComponentA from './components/ComponentA';
+import ComponentC from './components/ComponentC';
 
-export default function TeaSet() {
+function RootComponent() {
   return (
-    <>
-      <Cup guest={1} />
-      <Cup guest={2} />
-      <Cup guest={5} />
-    </>
+    <div>
+      <h1>Root Component</h1>
+      <ComponentA />
+      <ComponentC />
+    </div>
   );
 }
+
+export default RootComponent;
+
 
 
 
