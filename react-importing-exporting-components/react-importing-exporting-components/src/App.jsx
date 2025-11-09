@@ -1,22 +1,11 @@
 import { useState } from 'react'
 import './App.css'
+import Gallery from './Gallery.jsx';
 
-function Profile() {
+
+export default function App() {
   return (
-    <img
-      src="https://i.imgur.com/MK3eW3As.jpg"
-      alt="Katherine Johnson"
-    />
+    <Gallery />
   );
 }
 
-export default function Gallery() {
-  return (
-    <section>
-      <h1>Amazing scientists</h1>
-      <Profile />
-      <Profile />
-      <Profile />
-    </section>
-  );
-}
