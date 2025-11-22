@@ -1,12 +1,10 @@
 import React from 'react'
 
-export default function Avatar() {
+export default function TodoList() {
+  const name = 'Gregorio Y. Zara';
   return (
-    <img
-      className="avatar"
-      src="https://i.imgur.com/7vQD0fPs.jpg"
-      alt="Gregorio Y. Zara"
-    />
+    <h1>{name}'s To Do List</h1>
   );
 }
+
 
